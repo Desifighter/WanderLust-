@@ -27,9 +27,34 @@ body {
 
 /* footer */
 
+.sec-all {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #ebebeb;
+  height: 25rem;
+  border-bottom: 1px solid rgb(125, 117, 117);
+}
+.section {
+  margin-right: 3.5rem;
+}
+.sec-all div a {
+  color: black;
+  text-decoration: none;
+}
+.sec-all div a:hover {
+  text-decoration: underline;
+}
+.sec-p {
+  font-size: 1.1rem;
+}
+.sec-1 {
+  margin: 1.1rem 0 0 1.3rem;
+}
+
 .f-info-links a {
   text-decoration: none;
-  color: 222222;
+  color: #222222;
 }
 
 .f-info-links a:hover {
@@ -46,8 +71,12 @@ body {
 }
 
 .f-info-socials i {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   margin-right: 2rem;
+}
+
+.f-info-socials a {
+  color: #222222;
 }
 
 .f-info {
