@@ -20,3 +20,23 @@
     );
   });
 })();
+
+let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+taxSwitch.addEventListener("click", () => {
+  let taxInfo = document.getElementsByClassName("tax-info");
+  let actualPrices = document.getElementsByClassName("actual-price");
+
+  for (let i = 0; i < taxInfo.length; i++) {
+    if (taxSwitch.checked) {
+      // Display tax information
+      taxInfo[i].style.display = "inline";
+      // Hide actual price
+      actualPrices[i].style.display = "none";
+    } else {
+      // Hide tax information
+      taxInfo[i].style.display = "none";
+      // Display actual price
+      actualPrices[i].style.display = "inline";
+    }
+  }
+});

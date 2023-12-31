@@ -128,14 +128,19 @@
       <div class="card-img-overlay"></div>
       <div class="card-body">
         <p class="card-text">
-          <b> <%= listing.title %> </b><br />
+          <b><%= listing.title %></b>
+          <br />
+          <%= listing.location %>, <%= listing.country %>
+          <br />
           <span class="actual-price">
-            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+            &#8377; <b><%= listing.price.toLocaleString("en-IN") %></b> / night
           </span>
+
           <span class="tax-info">
             &nbsp; &nbsp;&#8377;
-            <%-(listing.price+listing.price*0.18).toLocaleString("en-IN") %> /
-            night</span
+            <b
+              ><%-(listing.price+listing.price*0.18).toLocaleString("en-IN") %> </b
+            >/ night</span
           >
         </p>
       </div>
@@ -143,25 +148,3 @@
   </a>
   <% } %>
 </div>
-
-<script>
-  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-  taxSwitch.addEventListener("click", () => {
-    let taxInfo = document.getElementsByClassName("tax-info");
-    let actualPrices = document.getElementsByClassName("actual-price");
-
-    for (let i = 0; i < taxInfo.length; i++) {
-      if (taxSwitch.checked) {
-        // Display tax information
-        taxInfo[i].style.display = "inline";
-        // Hide actual price
-        actualPrices[i].style.display = "none";
-      } else {
-        // Hide tax information
-        taxInfo[i].style.display = "none";
-        // Display actual price
-        actualPrices[i].style.display = "inline";
-      }
-    }
-  });
-</script>
