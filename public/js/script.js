@@ -40,3 +40,14 @@ taxSwitch.addEventListener("click", () => {
     }
   }
 });
+
+//Search functionality
+
+const searchInp = document.querySelector(".search-inp");
+const searchBtn = document.querySelector(".search-btn");
+
+searchBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const searchedText = searchInp.value;
+  window.location.href = `/listings/search/${searchedText}`;
+});

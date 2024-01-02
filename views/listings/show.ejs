@@ -120,6 +120,8 @@
       </div>
       <button class="btn btn-outline-dark">Submit</button>
     </form>
+    <br />
+
     <% } %> <% if(listing.reviews.length > 0) { %>
     <div class="row">
       <p><b>All Reviews</b></p>
@@ -138,7 +140,9 @@
           method="POST"
           action="/listings/<%= listing._id %>/reviews/<%=review._id %>?_method=DELETE"
         >
+          <% if(currUser){%>
           <button class="btn btn-sm btn-dark">Delete</button>
+          <%}%>
         </form>
       </div>
       <% } %>

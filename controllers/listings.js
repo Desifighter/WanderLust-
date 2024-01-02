@@ -88,3 +88,19 @@ module.exports.destroyListing = async (req, res) => {
   req.flash("success", "Listing Deleted");
   res.redirect("/listings");
 };
+
+//search and filter functionality
+module.exports.sortListing = async (req, res) => {
+  let { category } = req.params;
+  const listings = await Listing.find({ field: `${category}` });
+  res.render("listings/index.ejs", { allListings: listings });
+};
+
+module.exports.searchByName = async (req, res) => {
+  let { name } = req.params;
+  // Use a regular expression to perform a case-insensitive search
+  const listings = await Listing.find({
+    title: { $regex: new RegExp(name, "i") },
+  });
+  res.render("listings/index.ejs", { allListings: listings });
+};

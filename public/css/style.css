@@ -97,9 +97,10 @@ body {
 }
 
 .card-img-top {
-  border-radius: 1rem !important;
+  border-radius: 1.2rem !important;
   width: 100% !important;
   object-fit: cover !important;
+  box-shadow: 0.1rem 0.6rem 0.4rem #494949;
 }
 
 .card-body {
@@ -115,12 +116,12 @@ body {
 }
 
 /* Card Effect */
-.card-img-overlay {
-  opacity: 0;
+.listing-link .card-img-top {
+  transition: filter 0.8s ease;
 }
-.card-img-overlay:hover {
-  opacity: 0.2;
-  background-color: white;
+
+.listing-link:hover .card-img-top {
+  filter: brightness(79%);
 }
 
 /* New Page */

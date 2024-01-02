@@ -3,6 +3,7 @@ const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
 
 const Listing = require("../models/listing.js");
+const ExpressError = require("../utils/ExpressError.js");
 const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 
 const listingController = require("../controllers/listings.js");
@@ -24,6 +25,12 @@ router
 
 //New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
+
+//Sorting
+router.get("/sort/:category", listingController.sortListing);
+
+//Seach Functionality
+router.get("/search/:name", listingController.searchByName);
 
 router
   .route("/:id")
